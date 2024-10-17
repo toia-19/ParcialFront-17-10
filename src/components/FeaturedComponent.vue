@@ -12,6 +12,10 @@ const bookStore = useBookStore();
 const featuredBooks: Book[] = bookStore.getFeatured();
 
 // Parcial: Explica como funciona el feature component, como muestra los libros recomendados y como los obtiene?
+/*
+    El feature componente obtiene los libros desde la iteración del "v-for", mostrando cada uno de los atributos 
+    de la interfaz del libro aplicando interpolación 
+*/
 
 // configuracion del carrusel
 const cSettings = {
@@ -61,14 +65,15 @@ const cSettings = {
                         <!-- botones -->
                         <div class="buttons flex w-11/12 flex-row justify-between p-2 m-2 my-4">
                             <button
-                                class="block rounded-lg bg-transparent py-1.5 px-4 font-medium text-slate-200 transition-colors hover:bg-slate-900 active:bg-slate-900 disabled:opacity-50">Mas
-                                del Autor</button>
+                                class="block rounded-lg bg-transparent py-1.5 px-4 font-medium text-slate-200 transition-colors hover:bg-slate-900 active:bg-slate-900 disabled:opacity-50">
+                                Mas del Autor
+                            </button>
 
                             <button
                                 class="flex flex-row rounded-lg border border-slate-200 bg-slate-500 py-1.5 justify-between px-4 font-medium text-white transition-colors hover:bg-slate-950 active:bg-slate-950 disabled:opacity-50">
                                 <PlusCircleIcon class="text-2xl size-6 text-slate-200 m-auto" />
                                 <span class="w-2"></span>
-                                <p class="m-auto">Agregar al carro</p>
+                                <p class="m-auto" @click="">Agregar al carro</p>
                                 <span class="w-2"></span>
                                 <ShoppingCartIcon class="text-2xl size-6 text-slate-200 m-auto" />
                             </button>
@@ -81,8 +86,7 @@ const cSettings = {
             <template #addons>
                 <Navigation>
                     <template #prev>
-                        <span class="arrow">
-                            < </span>
+                        <span class="arrow"><</span>
                     </template>
                     <template #next>
                         <span class="arrow">></span>
@@ -108,7 +112,6 @@ const cSettings = {
     height: 100%;
     border-radius: 8px
 }
-
 
 .content:hover {
     background: rgba(0, 0, 0, 0.75);

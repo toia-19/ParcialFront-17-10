@@ -3,10 +3,19 @@ import { RouterLink, RouterView } from 'vue-router'
 import { BookOpenIcon, HomeIcon, ShoppingBagIcon, XCircleIcon } from '@heroicons/vue/24/outline';
 import { ref } from 'vue'
 
+import { useCartStore } from './stores/useCartStore';
+
+// import { getBook } from '@/stores/useCartStore';
+
 // librerias
 import Sidebar from 'primevue/sidebar'
 
+// Importación de carrito
+import CartComponent from './components/CartComponent.vue';
+
 // Parcial: instanciar nuestro useCartStore en una variable const para utilizarla en el componente
+const cartStore = useCartStore;
+
 // Parcial: obtener la cantidad de libros en carrito del cartStore y pasarlo en qty tag
 
 // Barra Lateral
@@ -22,9 +31,9 @@ function openCloseSidebar() {
   }
 }
 
-// Pacial: Por que uso ref para la variable sidebarVisible? 
-// Parcial: Como accedo al valor de ref para manipular los cambios en la barra lateral?
+// Parcial: Por que uso ref para la variable sidebarVisible?
 
+// Parcial: Como accedo al valor de ref para manipular los cambios en la barra lateral?
 
 </script>
 
@@ -60,6 +69,7 @@ function openCloseSidebar() {
           <XCircleIcon class="h-8 w-8" @click="openCloseSidebar" />
         </div>
         <!-- aca insertar CarroComponent -->
+        <CartComponent/>
       </div>
     </template>
   </Sidebar>

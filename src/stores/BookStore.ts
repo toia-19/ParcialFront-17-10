@@ -9,7 +9,7 @@ export const useBookStore = defineStore({
         data: [],
     }),
     actions: {
-        addBook(book: Book):  void {
+        addBook(book: Book): void {
             this.data.push(book);
         },
         removeBook(book: Book): void {

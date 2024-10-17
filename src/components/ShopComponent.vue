@@ -8,6 +8,9 @@ import Rating from 'primevue/rating';
 const bookStore = useBookStore();
 const books: Book[] = bookStore.getAllBooks();
 
+// Agregar libro al carrito -> uso de acción de BookStore
+// const shopBook = bookStore.addBook();
+
 </script>
 
 <template>
@@ -27,7 +30,7 @@ const books: Book[] = bookStore.getAllBooks();
                 <div class="price">$ {{ book.price }}.00</div>
                 <div class="overlay">
                     <!-- al hacer click en comprar el libro debera agregarse al carro -->
-                    <button class="btn-buy">Comprar</button>
+                    <button class="btn-buy" @click="">Comprar</button>
                 </div>
             </div>
         </div>
